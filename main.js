@@ -32,14 +32,47 @@ dynamically.
 */
 
 // TASK ONE - create system
+let orders = [
+   ["Mocha", "London Fog", "Americano"],
+   ["Raspberry Danish", "Orange Scone", "Blueberry Muffin"]
+];
 
 // TASK TWO - log number of items on each row
+console.log("Number of drinks: ", orders[0].length);
+console.log("Number of pastries: ", orders[1].length);
 
 // TASK THREE - access orders with brackets
+console.log(`Order 1: ${orders[0][1]}, ${orders[1][2]}`); // London Fog, Blueberry Muffin
+
+console.log(`Order 2: ${orders[0][2]}, ${orders[1][0]}`); // Americano, Raspberry Danish
+
+console.log(`Order 3: ${orders[0][0]}, ${orders[1][1]}`); // Mocha, Orange Scone
 
 // TASK FOUR - access orders with variables
+let drinkChoice = 0; // chosen drink
+let pastryChoice = 2; // chosen pastry
+console.log(`Dynamic variable order: ${orders[0][drinkChoice]}, ${orders[1][pastryChoice]}`); // Mocha, Blueberry Muffin
+
+/*
+--- access and print all ---
+for (let row = 0; row < 2; row++) {
+   for (let item = 0; item < 3; item++) {
+      console.log(orders[row][item]);
+   }
+}
+*/
 
 // TASK FIVE - loop for drink log
+console.log(" --- DRINK MENU --- ")
+for (let i = 0; i < orders[0].length; i++) {
+   console.log(`- ${orders[0][i]}`);
+}
 
 // TASK SIX - add and track
+orders[0].push("Flat White"); // push adds it to the end
+console.log(`New number of drinks: ${orders[0].length}`);
 
+// declare two variables, bracket notation, log order dynamically
+let categoryIndex = 0; // drinks is row 0 - pastries is row 1
+let itemIndex = 3; // newly added Flat White
+console.log(`New order: ${orders[categoryIndex][itemIndex]}`);
